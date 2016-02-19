@@ -16,7 +16,7 @@ namespace OneButtonGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        static internal GameObjectManager gameObjectManger;
+        static internal GameObjectManager gameObjectManager;
 
         public Game1()
         {
@@ -26,7 +26,7 @@ namespace OneButtonGame
 
         protected override void Initialize()
         {
-            gameObjectManger = new GameObjectManager();
+            gameObjectManager = new GameObjectManager();
             base.Initialize();
         }
 
@@ -44,7 +44,7 @@ namespace OneButtonGame
         {
             if (Input.IsKeyDown(Keys.Back)) { this.Exit(); }
 
-            gameObjectManger.Update();
+            gameObjectManager.Update();
 
             base.Update(gameTime);
         }
@@ -54,7 +54,7 @@ namespace OneButtonGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            gameObjectManger.Draw(spriteBatch);
+            gameObjectManager.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

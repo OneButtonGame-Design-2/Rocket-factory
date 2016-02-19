@@ -13,15 +13,15 @@ namespace OneButtonGame
 
         // ON SPRITESHEET ALBIN MIN GODA KAMRAT OCH VÄN
         public Point SpritePosition { get; set; }
-        public Point SpriteSize { get; set; }
+        public Point SourceSpriteSize { get; set; }
 
-        public Point SpriteScale { get; set; }
+        public Point SpriteSize { get; set; }
 
         public Color SpriteColor { get; set; }
 
         public Rectangle Hitbox
         {
-            get { return new Rectangle((int)Position.X, (int)Position.Y, SpriteScale.X, SpriteScale.Y); }
+            get { return new Rectangle((int)Position.X, (int)Position.Y, SpriteSize.X, SpriteSize.Y); }
         }
 
         public float GetDistance(Vector2 target)
@@ -33,7 +33,7 @@ namespace OneButtonGame
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(AssetManager.SpriteSheet, Hitbox, new Rectangle(SpritePosition.X, SpritePosition.Y, SpriteSize.X, SpriteSize.Y), SpriteColor);
+            spriteBatch.Draw(AssetManager.SpriteSheet, Hitbox, AssetManager.SpriteSheetSourceRect(new Point(0,0), new Point(SourceSpriteSize.X, SourceSpriteSize.Y)), SpriteColor);
         }
     }
 }

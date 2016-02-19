@@ -53,9 +53,9 @@ namespace OneButtonGame
             }
         }
 
-        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+        public void Draw()
         {
-            spriteBatch.Draw(AssetManager.SpriteSheet, AssetManager.SpriteSheetSourceRect(new Point(0, 0), new Point(256, 256)), Color.White);
+            //spriteBatch.Draw(AssetManager.SpriteSheet, SpritePosition, AssetManager.SpriteSheetSourceRect(new Point(0, 0), new Point(256, 256)), Color.White);
         }
 
     }
