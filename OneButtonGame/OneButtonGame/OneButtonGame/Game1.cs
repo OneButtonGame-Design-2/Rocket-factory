@@ -16,7 +16,7 @@ namespace OneButtonGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        GameObjectManager gameObjectManger;
+        static internal GameObjectManager gameObjectManger;
 
         public Game1()
         {

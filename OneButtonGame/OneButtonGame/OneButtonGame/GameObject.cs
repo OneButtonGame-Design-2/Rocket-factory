@@ -11,6 +11,7 @@ namespace OneButtonGame
     {
         public Vector2 Position { get; set; }
 
+        // ON SPRITESHEET ALBIN MIN GODA KAMRAT OCH VÄN
         public Point SpritePosition { get; set; }
         public Point SpriteSize { get; set; }
 
@@ -21,6 +22,11 @@ namespace OneButtonGame
         public Rectangle Hitbox
         {
             get { return new Rectangle((int)Position.X, (int)Position.Y, SpriteScale.X, SpriteScale.Y); }
+        }
+
+        public float GetDistance(Vector2 target)
+        {
+            return (float)Math.Sqrt((Position.X - target.X) * (Position.X - target.X) + (Position.Y - target.Y) * (Position.X - target.Y));
         }
 
         public virtual void Update() { }
