@@ -17,7 +17,7 @@ namespace OneButtonGame
         public static void Load(ContentManager contentManager)
         {
             SpriteSheet = contentManager.Load<Texture2D>("SpriteSheet");
-            CellSize = 60;
+            CellSize = 64;
         }
 
         public static Rectangle SpriteSheetSourceRect(Point gridPosition, Point size)

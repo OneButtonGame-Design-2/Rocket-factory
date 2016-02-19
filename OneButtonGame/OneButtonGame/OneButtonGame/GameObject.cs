@@ -16,11 +16,18 @@ namespace OneButtonGame
 
         public Point SpriteScale { get; set; }
 
+        public Color SpriteColor { get; set; }
+
+        public Rectangle Hitbox
+        {
+            get { return new Rectangle((int)Position.X, (int)Position.Y, SpriteScale.X, SpriteScale.Y); }
+        }
+
         public virtual void Update() { }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            
+            spriteBatch.Draw(AssetManager.SpriteSheet, Hitbox, new Rectangle(SpritePosition.X, SpritePosition.Y, SpriteSize.X, SpriteSize.Y), SpriteColor);
         }
     }
 }
