@@ -5,7 +5,17 @@ using System.Text;
 
 namespace OneButtonGame
 {
-    class Rocket
+    public class Rocket : GameObject
     {
+        public Rocket()
+        {
+            
+        }
+
+        public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(AssetManager.SpriteSheet, AssetManager.
+        }
+
     }
 }
