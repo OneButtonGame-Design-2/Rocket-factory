@@ -42,8 +42,7 @@ namespace OneButtonGame
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            if (Input.IsKeyDown(Keys.Back)) { this.Exit(); }
 
             gameObjectManger.Update();
 
