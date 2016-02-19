@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace OneButtonGame
 {
@@ -21,6 +22,11 @@ namespace OneButtonGame
 
         public void Update()
         {
+            foreach (GameObject g in gameObjects)
+            {
+                g.Update();
+            }
+
             foreach(GameObject g in gameObjectsToAdd) 
             {
                 gameObjects.Add(g);
@@ -32,6 +38,14 @@ namespace OneButtonGame
                 gameObjects.Remove(g);
             }
             gameObjectsToRemove.Clear();
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (GameObject g in gameObjects)
+            {
+                g.Draw(spriteBatch);
+            }
         }
 
         public void Add(GameObject g)
