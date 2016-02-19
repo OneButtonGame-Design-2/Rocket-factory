@@ -7,5 +7,6 @@ namespace OneButtonGame
 {
     class AssetManager
     {
+        
     }
 }
